@@ -1,0 +1,32 @@
+format_version: 10
+pipelines:
+  frontend:
+    group: expense-project
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-777c60b:
+        git: https://github.com/ssrungaram2/ansible_20240306_env.git
+        username: ssrungaram2
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        encrypted_password: AES:Mt2aEIDo4gCqrmTnr4Szng==:3tG71MyEsHrhuY1RaXBajlHAyTwKjJ26JoTyOcehI1Z284V1StlFsiOmwd9lV+0y
+    stages:
+    - ansible-playbook:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: manual
+          allow_only_on_success: false
+        jobs:
+          mysql-ansible-playbook:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - "-i mysql-dev.prajasevak.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 expense.yml -e role_name=mysql -e env=dev"
+                command: ansible-playbook
+                run_if: passed
