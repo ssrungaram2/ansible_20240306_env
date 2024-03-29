@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  frontend:
+  backend:
     group: expense-project
     label_template: ${COUNT}
     lock_behavior: none
@@ -28,7 +28,7 @@ pipelines:
             - exec:
                 arguments:
                 - ansible.sh
-                - frontend
+                - backend
                 - dev
                 command: bash
                 run_if: passed
@@ -47,7 +47,7 @@ pipelines:
             - exec:
                 arguments:
                 - ansible.sh
-                - frontend
+                - backend
                 - qa
                 command: bash
                 run_if: passed
@@ -66,7 +66,7 @@ pipelines:
             - exec:
                 arguments:
                 - ansible.sh
-                - frontend
+                - backend
                 - staging
                 command: bash
                 run_if: passed
@@ -85,7 +85,7 @@ pipelines:
             - exec:
                 arguments:
                 - ansible.sh
-                - frontend
+                - backend
                 - prod
                 command: bash
                 run_if: passed
