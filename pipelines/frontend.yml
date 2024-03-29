@@ -22,7 +22,7 @@ pipelines:
           type: manual
           allow_only_on_success: false
         jobs:
-          mysql-ansible-playbook:
+          ansible-playbook:
             timeout: 0
             tasks:
             - exec:
@@ -41,7 +41,7 @@ pipelines:
           type: manual
           allow_only_on_success: false
         jobs:
-          mysql-ansible-playbook:
+          ansible-playbook:
             timeout: 0
             tasks:
             - exec:
@@ -60,7 +60,7 @@ pipelines:
           type: manual
           allow_only_on_success: false
         jobs:
-          mysql-ansible-playbook:
+          ansible-playbook:
             timeout: 0
             tasks:
             - exec:
@@ -79,7 +79,7 @@ pipelines:
           type: manual
           allow_only_on_success: false
         jobs:
-          mysql-ansible-playbook:
+          ansible-playbook:
             timeout: 0
             tasks:
             - exec:
