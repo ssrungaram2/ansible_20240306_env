@@ -27,6 +27,8 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - "-i mysql-dev.prajasevak.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 expense.yml -e role_name=mysql -e env=dev"
-                command: ansible-playbook
+                - ansible.sh
+                - frontend
+                - dev
+                command: bash
                 run_if: passed
