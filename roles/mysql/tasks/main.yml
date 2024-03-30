@@ -9,12 +9,12 @@
     state: started
     enabled: yes
 
-# - name: Install Python MySQL Client
-#   ansible.builtin.pip:
-#     name:
-#       - PyMySQL
-#       - cryptography
-#     executable: pip3.9
+- name: Install Python MySQL Client
+  ansible.builtin.pip:
+    name:
+      - PyMySQL
+      - cryptography
+    executable: pip3.9
 
 # - name: Check the DB connection with our password
 #   community.mysql.mysql_info:
