@@ -16,6 +16,8 @@ pipelines:
     stages:
     - DEV:
         fetch_materials: true
+        environment_variables:
+          env: dev
         keep_artifacts: false
         clean_workspace: false
         approval:
@@ -29,12 +31,13 @@ pipelines:
                 arguments:
                 - ansible.sh
                 - mysql
-                - dev
                 command: bash
                 run_if: passed
 
     - QA:
         fetch_materials: true
+        environment_variables:
+          env: qa
         keep_artifacts: false
         clean_workspace: false
         approval:
@@ -48,12 +51,13 @@ pipelines:
                 arguments:
                 - ansible.sh
                 - mysql
-                - qa
                 command: bash
                 run_if: passed
 
     - STAGING:
         fetch_materials: true
+        environment_variables:
+          env: staging
         keep_artifacts: false
         clean_workspace: false
         approval:
@@ -67,12 +71,13 @@ pipelines:
                 arguments:
                 - ansible.sh
                 - mysql
-                - staging
                 command: bash
                 run_if: passed
 
     - PROD:
         fetch_materials: true
+        environment_variables:
+          env: prod
         keep_artifacts: false
         clean_workspace: false
         approval:
@@ -86,6 +91,5 @@ pipelines:
                 arguments:
                 - ansible.sh
                 - mysql
-                - prod
                 command: bash
                 run_if: passed
