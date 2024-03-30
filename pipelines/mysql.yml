@@ -8,11 +8,11 @@ pipelines:
     materials:
       git-777c60b:
         git: https://github.com/ssrungaram2/ansible_20240306_env.git
-        username: ssrungaram2
+        # username: ssrungaram2
         shallow_clone: false
         auto_update: true
         branch: main
-        encrypted_password: AES:Mt2aEIDo4gCqrmTnr4Szng==:3tG71MyEsHrhuY1RaXBajlHAyTwKjJ26JoTyOcehI1Z284V1StlFsiOmwd9lV+0y
+        # encrypted_password: AES:Mt2aEIDo4gCqrmTnr4Szng==:3tG71MyEsHrhuY1RaXBajlHAyTwKjJ26JoTyOcehI1Z284V1StlFsiOmwd9lV+0y
     stages:
     - DEV:
         fetch_materials: true
