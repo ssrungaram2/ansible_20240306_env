@@ -1,0 +1,33 @@
+format_version: 10
+pipelines:
+  test:
+    group: defaultGroup
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-777c60b:
+        git: https://github.com/ssrungaram2/ansible_20240306_env.git
+        username: ssrungaram2
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        encrypted_password: AES:Mt2aEIDo4gCqrmTnr4Szng==:3tG71MyEsHrhuY1RaXBajlHAyTwKjJ26JoTyOcehI1Z284V1StlFsiOmwd9lV+0y
+    stages:
+    - test-stage:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          test-job:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - 07-tags.yml
+                - -t fruits
+                command: ansible-playbook
+                run_if: passed

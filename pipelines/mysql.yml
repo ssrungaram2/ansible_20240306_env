@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   mysql:
-    group: expense-project
+    group: expense-project  # testing with Chai
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
@@ -92,4 +92,4 @@ pipelines:
                 - ansible.sh
                 - mysql
                 command: bash
-                run_if: passed
+                run_if: passed 
